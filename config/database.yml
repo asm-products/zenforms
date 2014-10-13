@@ -1,0 +1,23 @@
+# PostgreSQL. Versions 8.2 and up are supported.
+#
+
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  # For details on connection pooling, see rails configuration guide
+  # http://guides.rubyonrails.org/configuring.html#database-pooling
+  pool: 5
+
+development:
+  <<: *default
+  database: zenforms_development
+
+test:
+  <<: *default
+  database: zenforms_test
+
+production:
+  <<: *default
+  database: zenforms_production
+  username: zenforms
+  password: <%= ENV['ZENFORMS_DATABASE_PASSWORD'] %>
