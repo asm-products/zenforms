@@ -33,6 +33,10 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.0.0'
 end
 
+group :production do
+  gem 'rails_12factor'
+end
+
 group :test do
   gem 'capybara-webkit', '>= 1.2.0'
   gem 'database_cleaner'
