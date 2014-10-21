@@ -33,3 +33,6 @@ Visit [https://assemblymade.com](https://assemblymade.com) to learn more.
 #### Specific Technologies
 
 - [PDF.js](http://mozilla.github.io/pdf.js/) for parsing and rendering PDFs.  Based on initial research, fill-able PDF forms are difficult to handle (also for security concerns).  Some JS trickery with HTML input overlays is likely best.  After the user input is captured, the PDFs can be rendered precisely in the background.
+
+#### Troubleshooting
+- Capybara Webkit requires [Qt to be installed](https://github.com/thoughtbot/capybara-webkit/wiki/Installing-Qt-and-compiling-capybara-webkit). If you are getting a gem installation error for `capabara-webkit`, please check to make sure Qt is installed on your machine.
