@@ -18,6 +18,7 @@ gem 'sidekiq'
 gem 'sidekiq-status'
 gem 'unicorn'
 gem 'devise'
+gem 'dropzonejs-rails'
 
 group :development do
   gem 'spring'
