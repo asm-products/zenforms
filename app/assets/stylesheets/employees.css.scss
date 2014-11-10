@@ -2,10 +2,11 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-#dropzone-employee-import {
-  height: 75px;
-  background-color: gray;
-  cursor: pointer;
+#employee-import {
+  .dz-details {
+    width: inherit;
+    height: inherit;
+  }
 }
 
 #employees-table {
