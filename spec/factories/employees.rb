@@ -13,8 +13,8 @@
 FactoryGirl.define do
   factory :employee do
     email_address "MyString"
-payment_amount 1
-company_id 1
+    payment_amount 1
+    company
   end
 
 end
