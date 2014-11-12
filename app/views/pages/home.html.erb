@@ -2,6 +2,14 @@
 
 <p>You've reached Zenforms!</p>
 
+<% if user_signed_in? %>
+  You're logged in. <%= link_to "Import employees", import_employees_path %>
+<% else %>
+  <%= link_to "Sign in", new_user_session_path %> or <%= link_to "Sign up", new_user_registration_path %>
+<% end %>
+
+<hr/>
+
 <div class="well">
   <p>Code repo here: <a href="https://github.com/asm-products/quiet-night">https://github.com/asm-products/quiet-night</a></p>
   <p>Assembly product here: <a href="https://assembly.com/quiet-night">https://assembly.com/quiet-night</a></p>

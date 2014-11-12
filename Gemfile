@@ -17,6 +17,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'sidekiq'
 gem 'sidekiq-status'
 gem 'unicorn'
+gem 'devise'
+gem 'dropzonejs-rails'
+gem 'simple_form'
 
 group :development do
   gem 'spring'
@@ -31,6 +34,7 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'pry-rails'
   gem 'rspec-rails', '~> 3.0.0'
+  gem 'faker'
 end
 
 group :production do
@@ -45,5 +49,5 @@ group :test do
   gem 'shoulda-matchers', require: false
   gem 'timecop'
   gem 'webmock'
-  gem 'faker'
+  gem 'rspec-html-matchers'
 end
