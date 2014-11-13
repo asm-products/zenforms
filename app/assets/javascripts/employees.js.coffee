@@ -89,7 +89,7 @@ jQuery ->
         data: {employee: attrs}
         success: (data) ->
         error: (data) ->
-          $('#import-errors').append("<div class=\"alert alert-danger\">" + data.responseText + "</div>")
+          $('#import-errors').append("<div class=\"alert alert-danger\">" + data.responseJSON.errors + "</div>")
         complete: () ->
           rows.shift()
           if rows.length == 0
