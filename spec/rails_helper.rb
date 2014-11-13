@@ -12,6 +12,9 @@ require 'rspec/rails'
 # end with _spec.rb. You can configure this pattern with the --pattern
 # option on the command line or in ~/.rspec, .rspec or `.rspec-local`.
 Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| require f }
+Dir[Rails.root.join('spec/features/steps/**/*.rb')].each do |f|
+  require f
+end
 
 # Checks for pending migrations before tests are run.
 # If you are not using ActiveRecord, you can remove this line.

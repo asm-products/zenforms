@@ -19,6 +19,7 @@ gem 'sidekiq-status'
 gem 'unicorn'
 gem 'devise'
 gem 'dropzonejs-rails'
+gem 'simple_form'
 
 group :development do
   gem 'spring'
@@ -48,4 +49,5 @@ group :test do
   gem 'shoulda-matchers', require: false
   gem 'timecop'
   gem 'webmock'
+  gem 'rspec-html-matchers'
 end
