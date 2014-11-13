@@ -2,16 +2,18 @@
 #
 
 default: &default
+  timeout: 5000
   adapter: postgresql
   encoding: unicode
-  # For details on connection pooling, see rails configuration guide
-  # http://guides.rubyonrails.org/configuring.html#database-pooling
   pool: 5
 
 development:
   <<: *default
   host: localhost
   database: zenforms_development
+  host: localhost
+  username:
+  password:
 
 test:
   <<: *default
