@@ -113,6 +113,8 @@ GEM
     mime-types (2.4.3)
     mini_portile (0.6.0)
     minitest (5.4.2)
+    money (6.4.0)
+      i18n (>= 0.6.4, <= 0.7.0.beta1)
     multi_json (1.10.1)
     nokogiri (1.6.3.1)
       mini_portile (= 0.6.0)
@@ -268,6 +270,7 @@ DEPENDENCIES
   jquery-rails
   launchy
   less-rails
+  money
   pg
   pry-rails
   rails (= 4.1.6)

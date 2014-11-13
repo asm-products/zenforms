@@ -6,6 +6,9 @@
 
 <hr>
 
+<div id="import-errors">
+</div>
+
 <div id="dropzone">
   <form action="/#" class="dropzone" id="employee-import">
   </form>
@@ -27,5 +30,5 @@
 
 <div align="center">
   <button class="btn btn-success btn-lg" id="import-employees" style="display:none;">Import Employees</button>
-  <%= link_to "DONE! <i class=\"glyphicon glyphicon-chevron-right\"></i>".html_safe, "#", class: "btn btn-primary btn-lg btn-done", style: "display:none;" %>
+  <%= link_to "DONE!", employees_path, class: "btn btn-primary btn-lg btn-done", style: "display:none;" %>
 </div>

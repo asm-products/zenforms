@@ -34,7 +34,7 @@ jQuery ->
     )
 
   columnToAttr = (column) ->
-    columns = {"Email":"email", "Payout":"payout", "Unused":"unused"}
+    columns = {"Email":"email_address", "Payment Amount":"payment_amount", "Unused":"unused"}
     columns[column]
 
   rowToAttrHash = (row, schema) ->
@@ -57,7 +57,7 @@ jQuery ->
     $('input#headers').is(':checked')
 
   buildSelectHeaders = (rows) ->
-    columns = ["Email", "Payout", "Unused"]
+    columns = ["Email", "Payment Amount", "Unused"]
     $.each rows[0].split(","), (index, column) ->
       header_class = ""
       dropdown = "<select class=\"header-select\">"
@@ -74,12 +74,32 @@ jQuery ->
       dropdown += "</select>"
       $("table#employees-table thead tr:first").append "<th class=\"" + header_class + "\">" + dropdown + "</th>"
 
-  importRows = (rows) ->
+  processRows = (rows) ->
     if hasHeaders()
       rows.shift()
+    importRows(rows)
+
+  importRows = (rows) ->
     $.each rows, (i,row) ->
       attrs = rowToAttrHash(row, getSchema())
-      $('#import-employees').after "<p>" + JSON.stringify(attrs) + "</p>"
+      $.ajax(
+        url: "/employees"
+        dataType: "json"
+        type: "POST"
+        data: {employee: attrs}
+        success: (data) ->
+        error: (data) ->
+          $('#import-errors').append("<div class=\"alert alert-danger\">" + data.responseText + "</div>")
+        complete: () ->
+          rows.shift()
+          if rows.length == 0
+            # We're doing importing
+            $('button#import-employees').hide()
+            $('.btn.btn-done').fadeIn()
+          else
+            # Recursive call to keep importing
+            importRows(rows)
+      )
 
   loadTable = (rows) ->
     $.each rows.slice(0,5), (k,v) ->
@@ -90,7 +110,7 @@ jQuery ->
     $('button#import-employees').fadeIn('slow')
     $('table#employees-table').slideDown()
     $('button#import-employees').bind "click", () ->
-      importRows(rows)
+      processRows(rows)
 
   $(document).on "change", ".header-select", (e) ->
     header = $(this).parent()

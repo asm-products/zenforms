@@ -20,6 +20,7 @@ gem 'unicorn'
 gem 'devise'
 gem 'dropzonejs-rails'
 gem 'simple_form'
+gem 'money'
 
 group :development do
   gem 'spring'

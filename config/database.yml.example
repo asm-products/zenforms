@@ -11,7 +11,6 @@ development:
   <<: *default
   host: localhost
   database: zenforms_development
-  host: localhost
   username:
   password:
 
