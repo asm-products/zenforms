@@ -9,6 +9,11 @@
 <body>
 
 <div class="container">
+  <% if alert || notice %>
+    <div class="alert alert-<%= alert ? 'warning' : 'success' %>">
+        <%= alert || notice %>
+    </div>
+  <% end %>
   <%= yield %>
 </div>
 
