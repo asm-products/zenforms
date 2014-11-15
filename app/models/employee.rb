@@ -13,7 +13,10 @@
 class Employee < ActiveRecord::Base
   belongs_to :company
 
-  validates :email_address, presence: true, uniqueness: { scope: [:company_id] }
+  validates :email_address,
+    presence: true,
+    uniqueness: { scope: [:company_id] },
+    format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i }
   validates :payment_amount, presence: true
 
   def payment_amount_money

@@ -9,6 +9,12 @@
   }
 }
 
+#import-errors {
+  max-height: 150px;
+  margin-bottom: 10px;
+  overflow-y: scroll;
+}
+
 #employees-table {
   margin-top: 10px;
   th.unused, td.unused, tr.unused td {
@@ -16,5 +22,13 @@
     border: none !important;
     opacity:0.4;
     filter:alpha(opacity=40);
+  }
+  tfoot {
+    display: none;
+    tr td{
+      text-align: center;
+      background-color: #eee;
+      color: #888;
+    }
   }
 }

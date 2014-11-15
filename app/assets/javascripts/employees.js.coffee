@@ -105,6 +105,10 @@ jQuery ->
     $.each rows.slice(0,5), (k,v) ->
       attributes = v.split(",")
       $('table#employees-table tbody').append '<tr><td>' + attributes.join('</td><td>') + '</td></tr>'
+    if rows.length - 5 > 0
+      $foot = $('table#employees-table tfoot')
+      $foot.find('td').html(rows.length-5 + ' more rows hidden')
+      $foot.show()
     buildSelectHeaders(rows)
     $('#headers-checkbox').fadeIn('slow')
     $('button#import-employees').fadeIn('slow')
