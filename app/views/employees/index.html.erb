@@ -1,0 +1,15 @@
+<h1>Employees</h1>
+
+<%= link_to "Import employees", import_employees_path %>
+
+<table class="table table-striped" id="employees-table" >
+  <thead>
+    <tr>
+    <th>Email</th>
+    <th>Payment Amount</th>
+    </tr>
+  </thead>
+  <tbody>
+  <%= render @employees %>
+  </tbody>
+</table>
