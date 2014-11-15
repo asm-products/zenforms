@@ -1,0 +1,19 @@
+// Place all the styles related to the EmployeesController controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#dropzone-employee-import {
+  height: 75px;
+  background-color: gray;
+  cursor: pointer;
+}
+
+#employees-table {
+  margin-top: 10px;
+  th.unused, td.unused, tr.unused td {
+    background-color: #C9C9C9 !important;
+    border: none !important;
+    opacity:0.4;
+    filter:alpha(opacity=40);
+  }
+}

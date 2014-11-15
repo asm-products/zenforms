@@ -1,0 +1,31 @@
+<h1>Employees#import</h1>
+
+<p>Upload a CSV/Excel file of your employees' email and payout information.</p>
+
+<%= link_to "Download example", asset_path("employees_upload_example.csv"), class: "btn btn-default" %>
+
+<hr>
+
+<div id="dropzone">
+  <form action="/#" class="dropzone" id="employee-import">
+  </form>
+</div>
+
+<label class="checkbox" id="headers-checkbox" style="display:none;">
+  <input class="check_boxes optional" id="headers" name="headers" type="checkbox" value="0">
+  my csv file has headers
+</label>
+
+<table class="table table-striped" id="employees-table" style="display:none;">
+  <thead>
+    <tr>
+    </tr>
+  </thead>
+  <tbody>
+  </tbody>
+</table>
+
+<div align="center">
+  <button class="btn btn-success btn-lg" id="import-employees" style="display:none;">Import Employees</button>
+  <%= link_to "DONE! <i class=\"glyphicon glyphicon-chevron-right\"></i>".html_safe, "#", class: "btn btn-primary btn-lg btn-done", style: "display:none;" %>
+</div>
