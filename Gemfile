@@ -20,11 +20,14 @@ gem 'unicorn'
 gem 'devise'
 gem 'dropzonejs-rails'
 gem 'simple_form'
+gem 'money'
+gem 'phony_rails'
 
 group :development do
   gem 'spring'
   gem 'spring-commands-rspec'
   gem 'sextant'
+  gem 'letter_opener'
 end
 
 group :development, :test do
@@ -35,6 +38,7 @@ group :development, :test do
   gem 'pry-rails'
   gem 'rspec-rails', '~> 3.0.0'
   gem 'faker'
+  gem 'faker-medical'
 end
 
 group :production do

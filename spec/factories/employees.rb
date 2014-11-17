@@ -12,7 +12,7 @@
 
 FactoryGirl.define do
   factory :employee do
-    email_address "MyString"
+    email_address Faker::Internet.email
     payment_amount 1
     company
   end

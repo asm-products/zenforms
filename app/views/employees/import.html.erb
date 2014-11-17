@@ -1,10 +1,15 @@
 <h1>Employees#import</h1>
 
+<%= link_to "<= All Employees", employees_path %>
+
 <p>Upload a CSV/Excel file of your employees' email and payout information.</p>
 
 <%= link_to "Download example", asset_path("employees_upload_example.csv"), class: "btn btn-default" %>
 
 <hr>
+
+<div id="import-errors">
+</div>
 
 <div id="dropzone">
   <form action="/#" class="dropzone" id="employee-import">
@@ -18,14 +23,21 @@
 
 <table class="table table-striped" id="employees-table" style="display:none;">
   <thead>
-    <tr>
-    </tr>
+  <tr>
+  </tr>
   </thead>
   <tbody>
   </tbody>
+  <tfoot>
+  <tr>
+    <td colspan="100%">
+      4 more rows hidden
+    </td>
+  </tr>
+  </tfoot>
 </table>
 
 <div align="center">
   <button class="btn btn-success btn-lg" id="import-employees" style="display:none;">Import Employees</button>
-  <%= link_to "DONE! <i class=\"glyphicon glyphicon-chevron-right\"></i>".html_safe, "#", class: "btn btn-primary btn-lg btn-done", style: "display:none;" %>
+  <%= link_to "DONE!", employees_path, class: "btn btn-primary btn-lg btn-done", style: "display:none;" %>
 </div>
