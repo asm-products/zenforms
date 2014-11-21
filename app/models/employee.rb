@@ -11,15 +11,37 @@
 #
 
 class Employee < ActiveRecord::Base
+
   belongs_to :company
+  has_many :forms
+  has_many :notices
 
   validates :email_address,
-    presence: true,
-    uniqueness: { scope: [:company_id] },
-    format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i }
+            presence: true,
+            uniqueness: { scope: [:company_id] },
+            format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i }
   validates :payment_amount, presence: true
+
+  after_create :create_notice
 
   def payment_amount_money
     Money.new(payment_amount || 0).format
+  end
+
+  def notice_status
+    form = self.forms.first
+    if form
+      status = "Form filled in"
+    else
+      notice = self.notices.last
+      status = Sidekiq::Status::status(notice.job_id)
+    end
+    status
+  end
+
+  private
+
+  def create_notice
+    Notice.create(employee_id: self.id)
   end
 end

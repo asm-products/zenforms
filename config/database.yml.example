@@ -9,14 +9,14 @@ default: &default
 
 development:
   <<: *default
-  host: localhost
+  #host: localhost
   database: zenforms_development
   username:
   password:
 
 test:
   <<: *default
-  host: localhost
+  #host: localhost
   database: zenforms_test
 
 production:

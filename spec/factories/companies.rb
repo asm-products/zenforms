@@ -15,7 +15,7 @@
 FactoryGirl.define do
   factory :company do
     ein Faker::Company.ein
-    name Faker::Company.name
+    name Faker::Name.name
     address_street Faker::Address.street_address
     address_city Faker::Address.city
     address_state Faker::Address.state
