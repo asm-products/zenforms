@@ -29,12 +29,12 @@ class Employee < ActiveRecord::Base
   end
 
   def notice_status
-    form = self.forms.first
-    if form
+    # Forms should be scoped by company
+    if forms.present?
       status = "Form filled in"
     else
-      notice = self.notices.last
-      status = Sidekiq::Status::status(notice.job_id)
+      notice = notices.last
+      status = notice ? Sidekiq::Status::status(notice.job_id) : "unkown"
     end
     status
   end
