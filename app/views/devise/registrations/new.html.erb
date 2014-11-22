@@ -1,0 +1,26 @@
+<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: "auth-form" }) do |f| %>
+  <header>
+    <img class="auth-logo" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82016/zenforms-logo.svg" alt="" />
+  </header>
+
+  <% if f.object.errors.any? %>
+    <div class="auth-error show">
+      Looks like there were some errors
+    </div>
+  <% end %>
+
+  <%= f.input :full_name, autofocus: true, label: false, placeholder: "full name" %>
+  <%= f.input :email, label: false, placeholder: "email" %>
+  <%= f.input :password, placeholder: "password", label: false, input_html: { class: "auth-input-password" } %>
+  <%= f.input :password_confirmation, placeholder: "confirm password", label: false, input_html: { class: "auth-input-password" } %>
+  <%= f.button :submit, "Sign up", class: "auth-submit" %>
+
+  <footer>
+    <ul class="auth-footer-links">
+      <li class="auth-footer-link">
+        <%= link_to "I Already Have an Account", new_user_session_path %>
+      </li>
+    </ul>
+  </footer>
+
+<% end %>

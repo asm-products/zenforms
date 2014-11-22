@@ -2,7 +2,8 @@ Rails.application.routes.draw do
 
   # get 'employees/import'
   get 'form/:token', to: 'forms#new', as:'form_with_token'
-  devise_for :users
+  devise_for :users, :controllers => { :registrations => "users/registrations" }
+
   root to: 'high_voltage/pages#show', id: 'home'
 
   resources :employees do

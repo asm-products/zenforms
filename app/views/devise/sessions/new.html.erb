@@ -1,0 +1,28 @@
+<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: "auth-form" }) do |f| %>
+  <header>
+    <img class="auth-logo" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82016/zenforms-logo.svg" alt="" />
+  </header>
+
+  <% if resource.errors.any? %>
+    <div class="auth-error show">
+      Wrong email or password
+    </div>
+  <% end %>
+
+  <%= f.input :email, label: false, placeholder: "email" %>
+  <%= f.input :password, placeholder: "password", label: false, input_html: { class: "auth-input-password" } %>
+  <%= f.button :submit, "Log In", class: "auth-submit" %>
+
+  <footer>
+    <ul class="auth-footer-links">
+      <li class="auth-footer-link">
+        <%= link_to "Forgot Password", new_user_password_path, class: "auth-footer-link-hint" %>
+      </li>
+      <li class="auth-footer-link">
+        <%= link_to "Create an Account", new_user_registration_path %>
+      </li>
+    </ul>
+  </footer>
+
+<% end %>
+

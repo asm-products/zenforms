@@ -23,4 +23,6 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   has_many :companies
+
+  validates :full_name, presence: true
 end

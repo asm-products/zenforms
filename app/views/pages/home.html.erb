@@ -3,7 +3,7 @@
 <p>You've reached Zenforms!</p>
 
 <% if user_signed_in? %>
-  You're logged in. <%= link_to "Import employees", import_employees_path %>
+  You're logged in (<%= link_to "logout", destroy_user_session_path, method: :delete %>). <%= link_to "Import employees", import_employees_path %>
 <% else %>
   <%= link_to "Sign in", new_user_session_path %> or <%= link_to "Sign up", new_user_registration_path %>
 <% end %>
