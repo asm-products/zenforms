@@ -1,5 +1,7 @@
 # Zenforms
 
+<a href="https://assembly.com/zenforms/bounties"><img src="https://asm-badger.herokuapp.com/zenforms/badges/tasks.svg" height="24px" alt="Open Tasks" /></a>
+
 ## 1099 and other forms as a service
 
 This is a product being built by the Assembly community. You can help push this idea forward by visiting [https://assemblymade.com/zenforms](https://assemblymade.com/zenforms).
