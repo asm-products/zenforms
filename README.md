@@ -1,6 +1,6 @@
 # Zenforms
 
-<a href="https://assembly.com/zenforms/bounties"><img src="https://asm-badger.herokuapp.com/zenforms/badges/tasks.svg" height="24px" alt="Open Tasks" /></a>
+[![Build Status](https://asm-badger.herokuapp.com/meta/badges/tasks.svg)](https://asm-badger.herokuapp.com/meta/badges/tasks.svg)
 
 ## 1099 and other forms as a service
 
