@@ -1,0 +1,56 @@
+.action-bar {
+  @extend .row;
+}
+.action-button {
+  @extend .btn;
+  @extend .btn-block;
+  @extend .btn-success;
+  @extend .left;
+  padding: 12px;
+
+  &:before {
+    @extend .icon;
+    @extend .icon-envelope-stack;
+    padding-right: 5px;
+  }
+}
+.action-list {
+  @include inline-list();
+  @extend .right;
+  text-align: right;
+  padding: 10px 0 10px 20px;
+  border-top: 1px solid $gray;
+  border-bottom: 1px solid $gray;
+
+  li {
+    padding: 10px;
+
+    &:not(:last-of-type) {
+      border-right: 1px solid $gray;
+    }
+  }
+}
+
+.action-list-item__add,
+.action-list-item__edit,
+.action-list-item__send,
+.action-list-item__delete {
+
+  &:before {
+    @extend .icon;
+    padding-right: 5px;
+  }
+}
+.action-list-item__add {
+  @extend .icon-plus;
+}
+.action-list-item__edit {
+  @extend .icon-edit;
+}
+.action-list-item__send {
+  @extend .icon-send-doc;
+}
+.action-list-item__delete {
+  color: $gray-darker;
+  @extend .icon-trash-can;
+}

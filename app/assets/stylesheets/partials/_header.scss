@@ -1,0 +1,30 @@
+.header {
+  height: 55px;
+  background-color: $brand-primary;
+}
+.header-brand,
+.header-account {
+  display: block;
+  height: 55px;
+  padding: 10px;
+}
+.header-brand {
+  @extend .pull-left;
+}
+.header-logo,
+.header-avatar {
+
+  max-height: 100%;
+}
+.header-account {
+  @extend .pull-right;
+  color: $gray-darker;
+}
+.header-avatar {
+  display: inline-block;
+  width: 35px;
+  height: 55px;
+  background-color: $gray;
+  border: 1px solid $gray-darker;
+  border-radius: 50%;
+}

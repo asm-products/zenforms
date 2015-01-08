@@ -1,0 +1,54 @@
+.hero-section {
+  position: relative;
+  height: 500px;
+  padding-top: 75px;
+
+  &:before {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    top: 0; right: 0; left: 0;
+    height: 50px;
+    background-image:
+      linear-gradient(
+      to bottom,
+      $brand-primary,
+      white
+    );
+  }
+}
+
+.hero-logo {
+  display: block;
+  width: 150px;
+  height: auto;
+  margin: auto;
+}
+
+.hero-header,
+.hero-pricing,
+.hero-next {
+  text-align: center;
+}
+
+.hero-header {
+  @extend .section-header;
+}
+
+.hero-pricing,
+.hero-next {
+  display: block;
+  color: $gray-base;
+}
+
+.hero-pricing {
+  text-transform: Uppercase;
+}
+
+.hero-next {
+  @extend .icon;
+  @extend .icon-chevron-down;
+  position: absolute;
+  right: 0; bottom: 0; left: 0;
+  font-size: 2em;
+}

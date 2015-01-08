@@ -1,0 +1,66 @@
+.contractor-list {
+  //@extend .table;
+  //@extend .table-striped;
+  margin-top: 20px;
+  width: 100%;
+  border-collapse: separate;
+  border: 1px solid $gray;
+  border-radius: 6px;
+  th,
+  td {
+    padding: 10px;
+  }
+  th {
+    color: $brand-primary;
+  }
+  td {
+    border-top: 1px solid $gray;
+  }
+  tr {
+    border: 1px solid $gray;
+
+    &:nth-child(even) {
+      background-color: $gray-lighter; //Grey 1
+    }
+  }
+}
+.contractor-status {
+  text-align: center;
+  width: 10%;
+}
+.contractor-status__recieved,
+.contractor-status__not-recieved,
+.contractor-status__pending {
+  @extend .contractor-status;
+  font-size: .8em;
+
+  &:before {
+    @extend .icon;
+    display: block;
+    font-size: 2em;
+  }
+}
+.contractor-status__recieved {
+  @extend .icon-check-circle;
+  color: $brand-success;
+}
+.contractor-status__not-recieved {
+  @extend .icon-error;
+  color: $gray-darker;
+}
+.contractor-status__pending {
+  @extend .icon-clock;
+  color: $brand-warning;
+}
+.contractor-status__sent,
+.contractor-status__not-sent {
+  @extend .contractor-status;
+  font-size: .8em;
+  text-align: left;
+}
+.contractor-status__sent {
+  @include status-dot($brand-success);
+}
+.contractor-status__not-sent {
+  @include status-dot($gray-darker);
+}

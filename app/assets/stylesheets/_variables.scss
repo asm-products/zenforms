@@ -1,0 +1,44 @@
+$font-family-sans-serif: 'Lato';
+
+$headings-font-weight: 700;
+
+$link-hover-decoration: none;
+
+$wrapper-width: 760px!default;
+
+//== Breakpoints
+$break-steps: 500px;
+
+//== Colors
+
+$gray-base:     #999999;
+$gray-darker:   #B3B3B3;
+$gray-dark:     #CCCCCC;
+$gray:          #E6E6E6;
+$gray-light:    #F2F2F2;
+$gray-lighter:  #FAFAFA;
+
+$brand-primary: #3498DB; //Zen Blue
+$brand-success: #92C03D; //Positive
+$brand-info:    #5DADE2; //Zen Blue - Light
+$brand-warning: #FFC413; //Warning
+$brand-danger:  #FF1D25; //Negative
+
+$brand-black:   #323232;
+$brand-white:   #FFFFFF;
+
+
+//== Scaffolding
+
+$text-color:    #323232;
+
+
+//== Forms
+
+$input-border: #DDD;
+$input-group-addon-bg: transparent;
+
+
+//== Type
+
+$hr-border: $gray;

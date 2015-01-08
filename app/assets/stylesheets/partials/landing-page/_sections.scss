@@ -1,0 +1,25 @@
+.wrapper {
+  width: 500px;
+}
+
+.section {
+  padding: 20px;
+
+  &:nth-child(even) {
+    background-color: $gray-lighter;
+  }
+}
+
+.hero-section,
+.steps-section,
+.pricing-section,
+.questions-section {
+  @extend .section;
+}
+
+.section-header {
+  text-align: center;
+  color: $brand-primary;
+  font-weight: 400;
+  font-size: 1.4em;
+}

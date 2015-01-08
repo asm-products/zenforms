@@ -1,0 +1,45 @@
+@mixin clearfix() {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+@mixin wrapper($width: $wrapper-width) {
+  width: $width;
+  max-width: 100%;
+  margin: auto;
+}
+
+@mixin inline-list($margin: 0) {
+  margin: 0;
+  padding: 0;
+
+  li {
+    display: inline;
+
+    &:not(:last-of-type) {
+      margin-right: $margin;
+    }
+  }
+}
+
+@mixin status-dot($color) {
+  color: $color;
+
+  &:before {
+    content: "";
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin-right: 5px;
+    background-color: $color;
+    border-radius: 50%;
+  }
+}
+
+
+.wrapper {
+  @include wrapper();
+}

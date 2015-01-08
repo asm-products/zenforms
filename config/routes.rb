@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get 'form/:token', to: 'forms#new', as:'form_with_token'
   devise_for :users, :controllers => { :registrations => "users/registrations" }
 
-  root to: 'high_voltage/pages#show', id: 'home'
+  root to: 'high_voltage/pages#show', id: 'landing-page'
 
   resources :employees do
     collection do
