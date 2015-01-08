@@ -11,6 +11,7 @@
  * file per style scope.
  *
  *= require dropzone/basic
+ *= require bootstrap_and_overrides
  *= require style
  *= require landing-page
  *= require_self
