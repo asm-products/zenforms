@@ -13,6 +13,7 @@
  *= require dropzone/basic
  *= require style
  *= require landing-page
+ *= require devise
  *= require_self
  */
 
