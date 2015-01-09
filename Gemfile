@@ -12,7 +12,6 @@ gem 'jquery-rails'
 gem 'jbuilder', '~> 2.0'
 gem 'therubyracer'
 gem 'less-rails'
-gem 'twitter-bootstrap-rails'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'sidekiq'
 gem 'sidekiq-status'

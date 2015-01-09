@@ -18,7 +18,7 @@ Visit [https://assemblymade.com](https://assemblymade.com) to learn more.
 - Rails 4.1.6
 - Postgres
 - [react.js](http://facebook.github.io/react/)
-- Twitter Bootstrap 3
+- Twitter Bootstrap 3 with SCSS files
 
 #### Cloud Services
 - Airbrake
