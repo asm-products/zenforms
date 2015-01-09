@@ -63,9 +63,10 @@
           <td>
             <input type="checkbox">
           </td>
+          <%= content_tag :td, "Stubbed Name" %>
           <%= content_tag :td, employee.email_address %>
           <%= content_tag :td, employee.payment_amount_money %>
-          <%= content_tag :td, employee.notice_status %>
+          <% content_tag :td, employee.notice_status # TODO: needs refactoring with new design %>
           <td class="contractor-status__recieved">Recieved</td>
           <td class="contractor-status__not-sent">Not Sent</td>
         </tr>
