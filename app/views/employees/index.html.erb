@@ -1,16 +1,81 @@
-<h1>Employees</h1>
+<%= render "shared/header" %>
 
-<%= link_to "Home", page_path("home") %> | <%= link_to "Import employees", import_employees_path %>
+<main class="main-content">
 
-<table class="table table-striped" id="employees-table" >
-  <thead>
-    <tr>
-    <th>Email</th>
-    <th>Payment Amount</th>
-    <th>Status</th>
-    </tr>
-  </thead>
-  <tbody>
-  <%= render @employees %>
-  </tbody>
-</table>
+  <div class="container">
+
+    <header class="content-header row">
+      <nav class="col-md-8">
+        <ul class="content-breadcrumb">
+          <li class="content-breadcrumb-item"><a href="#">Contractors</a></li>
+        </ul>
+      </nav>
+      <div class="col-md-4">
+        <div class="content-search-group pull-right">
+          <span class="content-search-addon">
+            <span class="icon icon-search" aria-hidden="true"></span>
+          </span>
+          <input type="text" class="content-search-input" placeholder="Search for a Contractor">
+        </div>
+      </div>
+    </header>
+
+    <div class="action-bar">
+      <div class="col-md-2">
+        <a href="#" class="action-button">Mail 1099's</a>
+      </div>
+      <div class="col-md-10">
+        <ul class="action-list">
+          <li>
+            <a class="action-list-item__add" href="#">Add New</a>
+          </li>
+          <li>
+            <a class="action-list-item__edit" href="#">Edit 1099's</a>
+          </li>
+          <li>
+            <a class="action-list-item__send" href="#">Send W-9's</a>
+          </li>
+          <li>
+            <a class="action-list-item__delete" href="#">Delete</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <table class="contractor-list">
+      <thead>
+        <tr>
+          <th>
+            <input type="checkbox" />
+          </th>
+          <th>
+            Name <span class="icon-chevron-down"></span>
+          </th>
+          <th>Email Address</th>
+          <th>EOY Payout</th>
+          <th class="contractor-status">W-9 Status</th>
+          <th class="contractor-status">1099 Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <%- @employees.each do |employee| %>
+        <tr>
+          <td>
+            <input type="checkbox">
+          </td>
+          <%= content_tag :td, "Stubbed Name" %>
+          <%= content_tag :td, employee.email_address %>
+          <%= content_tag :td, employee.payment_amount_money %>
+          <% content_tag :td, employee.notice_status # TODO: needs refactoring with new design %>
+          <td class="contractor-status__recieved">Recieved</td>
+          <td class="contractor-status__not-sent">Not Sent</td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+  </div>
+
+</main>
+
+<%= render "shared/footer" %>

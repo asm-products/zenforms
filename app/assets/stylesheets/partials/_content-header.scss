@@ -26,6 +26,9 @@
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
   box-shadow: none;
+  border: none;
+  background: none;
+  border-bottom: 2px solid $gray-darker;
 
   &:focus {
     border-color: $input-border;

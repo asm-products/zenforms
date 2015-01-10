@@ -14,4 +14,8 @@
 //= require jquery_ujs
 //= require dropzone
 //= require papaparse.min
+//= require bootstrap/tooltip
+//= require bootstrap/popover
+//= require bootstrap/dropdown
+//= require bootstrap
 //= require_tree .
