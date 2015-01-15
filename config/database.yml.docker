@@ -1,0 +1,31 @@
+# PostgreSQL. Versions 8.2 and up are supported.
+#
+
+default: &default
+  timeout: 5000
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  username: postgres
+
+development:
+  <<: *default
+  #host: localhost
+  # host: <%= ENV.fetch('DB_1_PORT_5432_TCP_ADDR', 'localhost') %>
+  host: dblocal
+  port: <%= ENV.fetch('DB_1_PORT_5432_TCP_PORT', '5432') %>
+  database: zenforms_development
+  # username: postgres
+  # password: docker
+
+test:
+  <<: *default
+  #host: localhost
+  host: dblocal
+  database: zenforms_test
+
+production:
+  <<: *default
+  database: zenforms_production
+  username: zenforms
+  password: <%= ENV['ZENFORMS_DATABASE_PASSWORD'] %>

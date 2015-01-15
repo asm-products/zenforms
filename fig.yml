@@ -1,0 +1,13 @@
+dblocal:
+  image: postgres
+  ports:
+    - "5432"
+zenforms:
+  build: .
+  command: /bin/bash -l -c "rails server"
+  volumes:
+    - .:/var/www/zenforms
+  ports:
+    - "3000:3000"
+  links:
+    - dblocal
