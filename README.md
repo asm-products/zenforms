@@ -1,6 +1,6 @@
 # Zenforms
 
-<a href="https://assembly.com/zenforms/bounties"><img src="http://badger.asm.co/zenforms/badges/tasks.svg" height="24px" alt="Open Tasks" /></a>
+<a href="https://assembly.com/zenforms/bounties?utm_campaign=assemblage&utm_source=zenforms&medium=repo_badge"><img src="http://badger.asm.co/zenforms/badges/tasks.svg" height="24px" alt="Open Tasks" /></a>
 
 ## 1099 and other forms as a service
 
